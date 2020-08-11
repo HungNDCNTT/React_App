@@ -1,0 +1,59 @@
+<h1 class="d-flex justify-content-around">Bill </h1>
+<div style="background-color: #00CCCC;height: 280px;margin-right: 100px; margin-top: 20px">
+<form>
+    <form method="POST" action="/views/themHoaDon">
+        <div class="d-flex flex-row-reverse">
+            <input style="margin-right: 350px;margin-top: 30px" type="submit" class="btn btn-outline-primary" value="Add Bill" name="c">
+
+        </div>
+    </form>
+    <ul class="people_list">
+        {{#each data}}
+        <div style="clear:both;"></div>
+        <div style="float: left; margin-left: 70px;margin-bottom: 20px" class="div1" style="float: left;">
+            <li class="list-group-item active d-flex justify-content-around">ID: {{this._id}}</li>
+            <li class="list-group-item">User ID: {{this.id_kh}}</li>
+            <li class="list-group-item">Product ID: {{this.id_sp}}</li>
+            <li class="list-group-item">Quantity: {{this.so_luong}}</li>
+        
+
+        </div>
+        <form action="/suaHoaDon" method="POST">
+            <div style="margin-top: 10px; margin-left: 10px" type="button" class="btn btn-success">
+                <input type="hidden" value="{{this._id}}" name="idDel" />
+                <input type="hidden" value="{{this.id_kh}}" name="id_kh" />
+                <input type="hidden" value="{{this.id_sp}}" name="id_sp" />
+                <input type="hidden" value="{{this.so_luong}}" name="so_luong" />
+                <input type="submit" value="Edit Bill" name="c">
+            </div>
+
+        </form>
+        <form action="dddelete/:idHD" method="POST">
+            <div style="margin-top: 40px;margin-left: 10px"  class="btn btn-danger">
+                <input  type="text" placeholder="ID Delete" value="{{this._id}}" name="idDel" />
+
+                <input type="submit" value="Delete" name="c">
+            </div>
+        </form>
+        <div style="">
+
+        </div>
+        {{/each}}
+    </ul>
+
+
+</form>
+</div>
+<style>
+    .div1 {
+        width: 50%;
+    }
+    
+    h1 {
+        margin-top: 50px;
+        font-weight: bold;
+        color: Red;
+
+
+    }
+</style>

@@ -1,0 +1,81 @@
+<h1 class="d-flex justify-content-around">Product</h1>
+<div style="background-color: #00CCCC; margin-right: 100px; margin-top: 20px ">
+<form  method="post">
+
+    <form method="POST" action="/views//themProduct">
+
+    
+    <div class="d-flex flex-row-reverse">
+    <input style="margin-right: 160px;margin-top: 50px" type="submit" class="btn btn-outline-primary" value="Add Product" name="c">
+
+    </div>
+    </form>
+    <div class="aa" style="margin-left: 0px;">
+
+        {{#each data}}
+
+        <div class="ac" style="clear:both;">
+            <img src="{{this.hinh_anh}}" width="200" height="280" />
+        </div>
+
+        <div class="ab">
+            <ul>
+                <li class="list-group-item active d-flex justify-content-around">Product Name: {{this.ten_sp}}</li>
+                <li class="list-group-item">ID: {{this._id}} </li>
+                <li class="list-group-item">Product ID: {{this.ma_sp}}</li>
+                <li class="list-group-item">Price: {{this.don_gia}}</li>
+                <li class="list-group-item">Description: {{this.mo_ta}}</li>
+                <li class="list-group-item">Quantity: {{this.so_luong}}</li>
+                </br>
+            </ul>
+        </div>
+
+        <form style="margin-top: 30px" action="/suaProduct" method="POST">
+        <div style="margin-top: 10px; margin-left: 10px" type="button" class="btn btn-success">
+              <input type="hidden" value="{{this._id}}" name="idDel" />
+                 <input type="hidden" value="{{this.ma_sp}}" name="ma_sp" />
+                  <input type="hidden" value="{{this.ten_sp}}" name="ten_sp" />
+                   <input type="hidden" value="{{this.don_gia}}" name="don_gia" />
+                    <input type="hidden" value="{{this.hinh_anh}}" name="hinh_anh" />
+                    <input type="hidden" value="{{this.mo_ta}}" name="mo_ta" />
+            <input type="hidden" value="{{this.so_luong}}" name="so_luong" />
+            <input  type="submit" value="Edit" name="c">
+        </div>
+        </form>
+        <form action="/delete/:id" method="POST">
+            <div style="margin-top: 40px;margin-left: 10px" class="btn btn-danger">
+            <input type="text" placeholder="ID Delete" value="{{this._id}}" name="idDel" />
+              
+                <input type="submit" value="Delete" name="c">
+            </div>
+        </form>
+        <div style="clear:both;">
+
+        </div>
+        {{/each}}
+
+
+    </div>
+</form>
+
+</div>
+
+<style>
+
+    h1 {
+        margin-top: 50px;
+        font-weight: bold;
+        color: Red;
+
+    }
+
+    .aa>.ac {
+        float: left;
+        margin-left: 50px;
+    }
+
+    .aa>.ab {
+        float: left;
+        width: 45%;
+    }
+</style>

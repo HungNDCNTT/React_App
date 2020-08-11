@@ -1,0 +1,48 @@
+
+<div class="container">
+<section class="sua_hoadon">
+    <div class="container" >
+<form action="/suaHoaDon" method="POST">
+
+    <div class="form-group">
+        <label for="exampleInputEmail1">ID</label>
+        <input type="text" value="{{data.idDel1}}" name="_id" class="form-control" id="exampleInputEmail1"
+            placeholder="Id" readonly>
+    </div>
+    <div class="form-group">
+        <label for="exampleInputEmail1">User ID</label>
+        <input type="text" value="{{data.id_kh}}" name="id_kh" class="form-control" id="exampleInputEmail1"
+            placeholder="User ID" >
+    </div>
+    <div class="form-group">
+        <label for="exampleInputEmail1">Product ID</label>
+        <input type="text" value="{{data.id_sp}}" name="id_sp" class="form-control" id="exampleInputEmail1"
+            placeholder="Product ID" >
+    </div>
+    <div class="form-group">
+        <label for="exampleInputEmail1">Quantity</label>
+        <input type="text" value="{{data.so_luong}}" name="so_luong" class="form-control" id="exampleInputEmail1"
+            placeholder="Quantity" >
+    </div>
+
+
+    <input style="margin-left: 150px;margin-bottom: 20px" type="submit" value="submitt"  class="btn btn-primary" name="c">
+</form>
+    </div>
+</section>
+
+</div>
+<style>
+h2
+{
+    font-weight: bold;
+    color: blue;
+    width: 50%;
+}
+.container{
+    width: 60%;
+    float: left;
+    margin-top: 30px;
+    background-color: #4CAF50;
+}
+</style>

@@ -1,0 +1,21 @@
+{
+  "name": "ass",
+  "version": "1.0.0",
+  "description": "Express App",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "express": "*",
+    "express-handlebars": "*",
+    "mongoose": "^5.9.10"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "handlebars": "^4.5.0"
+  }
+}

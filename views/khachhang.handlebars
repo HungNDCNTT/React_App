@@ -1,0 +1,60 @@
+<h1 class="d-flex justify-content-around">Customer</h1>
+<div style="background-color: #00CCCC; margin-right: 100px; margin-top: 20px ">
+<form>
+    <form method="POST" action="/views/themKhachHang">
+        <div class="d-flex flex-row-reverse">
+            <input style="margin-right: 340px;margin-top: 30px" type="submit" class="btn btn-outline-primary" value="Add User" name="c">
+
+        </div>
+    </form>
+    <ul class="people_list">
+        {{#each data}}
+        <div style="clear:both;"></div>
+        <div class="div1" style="float: left; margin-left: 70px;margin-bottom: 20px">
+            <li class="list-group-item active d-flex justify-content-around">Username: {{this.user}}</li>
+            <li class="list-group-item">User ID: {{this.MAKH}}</li>
+            <li class="list-group-item">Password: {{this.pass}}</li>
+            <li class="list-group-item">Fullname: {{this.fullname}}</li>
+
+
+        </div>
+        <form action="/suaKhachHang" method="POST">
+            <div style="margin-top: 10px; margin-left: 10px" type="button" class="btn btn-success">
+                <input type="hidden" value="{{this._id}}" name="idDel" />
+                <input type="hidden" value="{{this.user}}" name="user" />
+                <input type="hidden" value="{{this.MAKH}}" name="MAKH" />
+                <input type="hidden" value="{{this.pass}}" name="pass" />
+                <input type="hidden" value="{{this.fullname}}" name="fullname" />
+
+                <input type="submit" value="Edit User" name="c">
+            </div>
+
+        </form>
+        <form action="ddelete/:idKH" method="POST">
+            <div style="margin-top: 40px;margin-left: 10px" class="btn btn-danger">
+                <input type="text" placeholder="ID Delete" value="{{this._id}}" name="idDel" />
+
+                <input type="submit" value="Delete" name="c">
+            </div>
+        </form>
+        <div style="clear:both;">
+
+        </div>
+        {{/each}}
+    </ul>
+
+
+</form>
+</div>
+<style>
+    .div1 {
+        width: 50%;
+    }
+    
+    h1 {
+        margin-top: 50px;
+        font-weight: bold;
+        color: Red;
+
+    }
+</style>

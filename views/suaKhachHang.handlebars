@@ -1,0 +1,43 @@
+<div class="container">
+<form  action="/suaKhachHang" method="POST">
+
+    <div class="form-group">
+        <label for="exampleInputEmail1">ID</label>
+        <input type="text" value="{{data.idDel1}}" name="_id" class="form-control" id="exampleInputEmail1"
+            placeholder="Id" readonly>
+    </div>
+    <div class="form-group">
+        <label for="exampleInputEmail1">User ID</label>
+        <input type="text" value="{{data.username}}" name="MAKH" class="form-control" id="exampleInputEmail1"
+            placeholder="User ID" >
+    </div>
+    <div class="form-group">
+        <label for="exampleInputEmail1">Username</label>
+        <input type="text" value="{{data.name}}" name="user" class="form-control" id="exampleInputEmail1"
+            placeholder="Username" >
+    </div>
+    <div class="form-group">
+        <label for="exampleInputEmail1">Password</label>
+        <input type="text" value="{{data.state}}" name="pass" class="form-control" id="exampleInputEmail1"
+            placeholder="Password" >
+    </div>
+    <div class="form-group">
+        <label for="exampleInputEmail1">Fullname</label>
+        <input type="text" value="{{data.old}}" name="fullname" class="form-control" id="exampleInputEmail1"
+        placeholder="Fullname"  >
+    </div>
+
+
+    <input style="margin-left: 300px;margin-bottom: 20px" type="submit" value="OK"  class="btn btn-primary" name="c">
+</form>
+</div>
+
+<style>
+
+    .container{
+
+        float: left;
+        margin-top: 30px;
+        background-color: #4CAF50;
+    }
+</style>
